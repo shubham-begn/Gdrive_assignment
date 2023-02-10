@@ -27,7 +27,7 @@ const oauth2Client = new google.auth.OAuth2(
     try {
       const response = await drive.files.create({
         requestBody: {
-          name: 'Eazydiner.jpg', //This can be name of your choice
+          name: 'Eazydiner.jpg', 
           mimeType: 'image/png',
         },
         media: {
@@ -64,10 +64,7 @@ const oauth2Client = new google.auth.OAuth2(
         },
       });
   
-      /* 
-      webViewLink: View the file in browser
-      webContentLink: Direct download link 
-      */
+    
       const result = await drive.files.get({
         fileId: fileId,
         fields: 'webViewLink, webContentLink',
